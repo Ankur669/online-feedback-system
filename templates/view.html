@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h2>Feedback Dashboard</h2>
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>Message</th>
+                <th>Sentiment</th>
+            </tr>
+            {% for fb in feedback %}
+            <tr>
+                <td>{{ fb.id }}</td>
+                <td>{{ fb.user.username }}</td>
+                <td>{{ fb.message }}</td>
+                <td>{{ fb.sentiment }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+<canvas id="sentimentChart" width="400" height="200"></canvas>
+<script>
+    // Sentiment counts passed safely from Flask
+    var sentimentData = {{ sentiment_counts | tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

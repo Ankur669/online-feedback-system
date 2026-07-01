@@ -1,0 +1,98 @@
+/* Root variables for easy theming */
+:root {
+    --primary: #007bff;
+    --primary-dark: #0056b3;
+    --bg-light: #f4f6f9;
+    --bg-dark: #1e1e2f;
+    --text-light: #333;
+    --text-dark: #f4f4f4;
+    --card-bg: #fff;
+    --card-bg-dark: #2a2a3d;
+}
+
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Card-style forms */
+form, .table-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+}
+
+body.dark form, body.dark .table-container {
+    background: var(--card-bg-dark);
+}
+
+/* Inputs */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: var(--primary-dark);
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background: var(--primary);
+    color: white;
+}
+
+/* Dark mode table */
+body.dark table th {
+    background: var(--primary-dark);
+}
