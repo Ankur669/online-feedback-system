@@ -1,7 +1,3 @@
-Here’s a polished **GitHub project description (README style)** you can use when uploading your Online Feedback System project:
-
----
-
 # 📝 Online Feedback System
 
 A web application built with **Flask**, **SQLAlchemy**, and **Flask‑Login** that allows users to submit feedback, automatically analyzes sentiment using **TextBlob**, and provides an **admin dashboard** with sentiment visualization.
